@@ -1,0 +1,13 @@
+{
+  "hosting": [
+    {
+      "site": "angular-contact-form-5d",
+      "public": "public"
+    },
+    {
+      "target": "hero-form",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
