@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "contact-form-44061"
+  },
+  "targets": {
+    "contact-form-44061": {
+      "hosting": {
+        "hero-form": [
+          "contact-form-44061"
+        ]
+      }
+    }
+  }
+}
