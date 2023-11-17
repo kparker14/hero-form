@@ -1,0 +1,87 @@
+<div class="bg" >
+
+  <main id="main2" class="form-contact" [hidden]="success">
+    <div class="container">
+      <div >
+        <!-- [hidden]="submitted" -->
+        <h1 class="h3">Contact</h1>
+        <!-- (ngSubmit)="onSubmit()" -->
+        <form #contactForm id="contactForm" class="" [formGroup]="myForm"  class="row g-2 needs-validation" novalidate>
+        
+          <div class="form-floating" style="position: relative;">
+           
+            <input type="text" id="firstName" #firstNameTemplateVariable name="firstName" placeholder="Provide your first name"
+              class="form-control no-border" id="first-name" formControlName="firstName" [formControl]="firstName">
+            <label for="first-name">First Name</label>
+ 
+            <div class="text-danger" #inputNil id="first-name-state-validator"  *ngIf="(!firstName.pristine && firstName.value == '') || (firstName.pristine && submitted == true)">
+              Name is required
+            </div>
+
+            <div class="text-danger" *ngIf="firstName?.errors?.['forbiddenName'] ">
+              Name cannot be Bob
+            </div>
+          </div>
+
+           <div class="form-floating" style="position: relative;">
+
+            <input type="text" name="lastName" formControlName="lastName" #lastNameTemplateVariable id="last-name" class="form-control no-border" placeholder="provide your last name"
+              [formControl]="lastName">
+            <label for="last-name">Last Name</label>
+
+            <div id="lastNameRequired" #inputNil class="text-danger" *ngIf="(!lastName.pristine && lastName.value == '') || (lastName.pristine && submitted == true)">
+              Last name is required
+            </div>
+
+          </div>
+
+          <div class="form-floating" style="position: relative;">
+
+            <input type="email" #emailTemplateVariable [formControl]="email" name="email"  class="form-control no-border" placeholder="Provide your email"
+              id="email">
+            <label for="email">Email</label>
+
+           <div id="emailRequired" class="email-danger" #inputNil  *ngIf="(!email.pristine && email.value == '') || (email.pristine && submitted == true)">
+              Email is required
+            </div>
+            <div class="email-danger" *ngIf="email.errors?.['email']">
+              Email format name&#64;organization
+            </div>
+          </div>
+
+          <div class="form-floating" style="position: relative;">
+
+            <!-- always keep your textarea code on the same line - really... and it's 2023 -->
+            <textarea id="comment" name="comment" [defaultValue]="myValue" (input)="onValueChange($event);" #commentTemplateVariable [formControl]="comment" class="form-control no-border" rows="6" maxlength="1000" placeholder="Provide a comment"></textarea>
+            <label for="comment">Comment</label>
+        
+          <div class="text-danger" #inputNil *ngIf="(!comment.pristine && comment.value == '') || (comment.pristine && comment.value == '' && submitted == true)"  >
+            Comment is required
+          </div>
+         
+          </div>
+          
+          <div class="form-group">
+            <p id="counter">Characters remaining: {{ counter }}</p>
+          </div>
+        
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" (click)="onSubmit($event)">Submit</button>
+        <button type="reset" class="btn btn-success" (click)="onReset()">Reset</button>
+          </div>
+      </form>
+    </div>
+</div>
+  
+</main>
+
+<div class="outer-box" [hidden]="!success">
+  <div class="wrapper">
+    <div class="box">
+      <p>Thank You!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+

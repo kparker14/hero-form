@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              
               "src/styles.css",
               "src/styles.scss"
             ],
@@ -63,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hero-form:build:production"
+              "buildTarget": "hero-form:build:production"
             },
             "development": {
-              "browserTarget": "hero-form:build:development"
+              "buildTarget": "hero-form:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hero-form:build"
+            "buildTarget": "hero-form:build"
           }
         },
         "test": {
