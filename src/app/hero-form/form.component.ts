@@ -113,7 +113,7 @@ export class HeroFormComponent implements OnInit {
   
     const data = JSON.stringify({
       "Messages": [{
-        "From": {"Email": "<YOUR EMAIL>", "FirstName": "<YOUR NAME>"},
+        "From": {"Email": "katherineparker2015@gmail.com", "FirstName": "Katherine Parker"},
         "To": [{"Email": this.email.value, "Name": this.firstName.value + " " +  this.lastName.value}],
         "TextPart": this.comment.value
       }]
